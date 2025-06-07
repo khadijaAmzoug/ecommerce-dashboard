@@ -7,7 +7,7 @@ export const fetchProductCatalog = (): Promise<{ id: number; name: string; price
             { id: 2, name: "Headphones", price: 200 },
         ]);
         } else {
-       reject(new NetworkError("Failed to fetch product catalog")); // هنا الخطأ المخصص
+       reject(new NetworkError("Failed to fetch product catalog")); 
         }
     }, 1000);
     });
@@ -46,12 +46,11 @@ export const fetchSalesReport= () : Promise <{totalSales: number, unitsSold: num
 
 
 
-// customErrors.ts (أو يمكن في أعلى apiSimulator.ts)
 
 export class NetworkError extends Error {
   constructor(message: string) {
-    super(message); // نرسل الرسالة إلى الكلاس الأب (Error)
-    this.name = "NetworkError"; // نغيّر الاسم ليسهل التعرف عليه
+    super(message); 
+    this.name = "NetworkError"; 
   }
 }
 
